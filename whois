@@ -1,7 +1,7 @@
 import whois
 
-inputfile = "C:\\Users\\Alka\\Documents\\DilipCareer\\Python\\whois\\domain.txt"
-outputfile = "C:\\Users\\Alka\\Documents\\DilipCareer\\Python\\whois\\registrar.txt"
+inputfile = "xxx\\domain.txt"
+outputfile = "xxx\\registrar.txt"
 
 with open(inputfile, "r") as iinput, open(outputfile, "w") as Output:
     for domain in iinput:

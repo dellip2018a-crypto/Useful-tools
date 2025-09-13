@@ -1,0 +1,18 @@
+import whois
+
+inputfile = "C:\\Users\\Alka\\Documents\\DilipCareer\\Python\\whois\\domain.txt"
+outputfile = "C:\\Users\\Alka\\Documents\\DilipCareer\\Python\\whois\\registrar.txt"
+
+with open(inputfile, "r") as iinput, open(outputfile, "w") as Output:
+    for domain in iinput:
+        domain = domain.strip()
+        if not domain:
+            continue
+        try:
+            res = whois.whois(domain)
+            registrar = res.registrar if res.registrar else "N/A"
+            Output.write(f"{domain} | {registrar}\n")
+            print(domain, registrar)
+        except Exception as e:
+            Output.write(f"{domain} | WHOIS lookup failed: {e}\n")
+            print("Failed:", domain)
